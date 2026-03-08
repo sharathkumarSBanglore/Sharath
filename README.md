@@ -6,7 +6,7 @@
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sharathkumar-sd/)
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sharathkumar453056@gmail.com)
-[![Portfolio](https://img.shields.io/badge/Portfolio-1B4F72?style=for-the-badge&logo=github&logoColor=white)](https://sharathkumarsbangalore.github.io/Sharath/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-1B4F72?style=for-the-badge&logo=github&logoColor=white)](https://sharathkumarsbanglore.github.io/Sharath/)
 [![Phone](https://img.shields.io/badge/+91%209108363988-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](tel:+919108363988)
 
 ![Profile Views](https://komarev.com/ghpvc/?username=sharathkumarSBanglore&color=1B4F72&style=for-the-badge&label=Profile+Views)
