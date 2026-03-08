@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Sharath Kumar S D – Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy: #0D1B2A;
+    --blue: #1B4F72;
+    --sky: #2E86AB;
+    --gold: #E8A020;
+    --cream: #F5F0E8;
+    --white: #FFFFFF;
+    --gray: #64748B;
+    --light: #F0F4F8;
+  }
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top:0; left:0; right:0; z-index:100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 4rem;
+    background: rgba(13,27,42,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; font-weight:900;
+    color: var(--gold); letter-spacing:1px;
+  }
+  .nav-links { display:flex; gap:2.5rem; list-style:none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.7); text-decoration:none;
+    font-size:0.9rem; font-weight:500; letter-spacing:0.5px;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height:100vh;
+    display:flex; align-items:center;
+    padding: 0 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position:absolute; inset:0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(46,134,171,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(232,160,32,0.08) 0%, transparent 50%);
+  }
+  .hero-grid {
+    position:absolute; inset:0; opacity:0.04;
+    background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-content { position:relative; z-index:2; max-width:750px; }
+  .hero-tag {
+    display:inline-block;
+    background: rgba(232,160,32,0.15);
+    border: 1px solid rgba(232,160,32,0.4);
+    color: var(--gold);
+    padding: 0.4rem 1.2rem;
+    border-radius: 100px;
+    font-size: 0.8rem; font-weight:600; letter-spacing:2px; text-transform:uppercase;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight:900; line-height:1.05;
+    margin-bottom: 1rem;
+    animation: fadeUp 0.7s 0.1s ease both;
+  }
+  .hero-name span { color: var(--sky); }
+  .hero-role {
+    font-size: 1.25rem; font-weight:300; color: rgba(255,255,255,0.65);
+    margin-bottom: 2rem; line-height:1.6;
+    animation: fadeUp 0.7s 0.2s ease both;
+  }
+  .hero-ctas {
+    display:flex; gap:1rem; flex-wrap:wrap;
+    animation: fadeUp 0.7s 0.3s ease both;
+  }
+  .btn-primary {
+    background: var(--gold); color: var(--navy);
+    padding: 0.85rem 2rem; border-radius:8px;
+    font-weight:700; font-size:0.95rem; text-decoration:none;
+    transition: all 0.2s; display:inline-flex; align-items:center; gap:0.5rem;
+  }
+  .btn-primary:hover { background:#d4911a; transform:translateY(-2px); box-shadow:0 8px 24px rgba(232,160,32,0.3); }
+  .btn-outline {
+    border: 2px solid rgba(255,255,255,0.25); color:var(--white);
+    padding: 0.85rem 2rem; border-radius:8px;
+    font-weight:600; font-size:0.95rem; text-decoration:none;
+    transition: all 0.2s; display:inline-flex; align-items:center; gap:0.5rem;
+  }
+  .btn-outline:hover { border-color:var(--sky); color:var(--sky); transform:translateY(-2px); }
+
+  .hero-stats {
+    display:flex; gap:3rem; margin-top:3.5rem;
+    animation: fadeUp 0.7s 0.4s ease both;
+  }
+  .stat-num {
+    font-family:'Playfair Display',serif;
+    font-size:2.4rem; font-weight:900; color:var(--gold); line-height:1;
+  }
+  .stat-label { font-size:0.8rem; color:rgba(255,255,255,0.5); margin-top:0.3rem; text-transform:uppercase; letter-spacing:1px; }
+
+  /* ── SECTION BASE ── */
+  section { padding: 6rem 4rem; }
+  .section-inner { max-width:1100px; margin:0 auto; }
+  .section-label {
+    font-size:0.75rem; font-weight:700; letter-spacing:3px; text-transform:uppercase;
+    color:var(--gold); margin-bottom:0.6rem;
+  }
+  .section-title {
+    font-family:'Playfair Display',serif;
+    font-size:clamp(2rem,4vw,3rem); font-weight:900; line-height:1.15;
+    margin-bottom:3rem;
+  }
+  .section-title span { color:var(--sky); }
+
+  /* ── ABOUT ── */
+  #about { background: var(--light); color:var(--navy); }
+  #about .section-title { color:var(--navy); }
+  #about .section-label { color:var(--blue); }
+  .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; }
+  .about-text { font-size:1.05rem; line-height:1.8; color:#374151; }
+  .about-text p + p { margin-top:1.2rem; }
+  .about-card {
+    background:var(--white); border-radius:16px;
+    padding:2rem; box-shadow:0 4px 24px rgba(0,0,0,0.08);
+    border-left:4px solid var(--sky);
+  }
+  .about-card h4 { font-weight:700; color:var(--navy); margin-bottom:0.8rem; font-size:1rem; }
+  .about-card p { font-size:0.9rem; color:var(--gray); line-height:1.6; }
+  .cards-stack { display:flex; flex-direction:column; gap:1rem; }
+
+  /* ── EXPERIENCE ── */
+  #experience { background:var(--navy); }
+  .exp-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius:16px; padding:2.5rem;
+    position:relative; overflow:hidden;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .exp-card:hover { border-color:rgba(46,134,171,0.5); transform:translateY(-4px); }
+  .exp-card::before {
+    content:''; position:absolute; top:0; left:0; bottom:0; width:4px;
+    background:linear-gradient(to bottom, var(--sky), var(--gold));
+  }
+  .exp-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem; flex-wrap:wrap; gap:0.5rem; }
+  .exp-role { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:700; }
+  .exp-company { color:var(--sky); font-weight:600; margin-top:0.25rem; }
+  .exp-period {
+    background:rgba(232,160,32,0.15); border:1px solid rgba(232,160,32,0.3);
+    color:var(--gold); padding:0.3rem 1rem; border-radius:100px;
+    font-size:0.8rem; font-weight:600; white-space:nowrap;
+  }
+  .exp-bullets { list-style:none; margin-top:1.2rem; display:flex; flex-direction:column; gap:0.7rem; }
+  .exp-bullets li {
+    display:flex; gap:0.8rem; align-items:flex-start;
+    font-size:0.92rem; color:rgba(255,255,255,0.7); line-height:1.6;
+  }
+  .exp-bullets li::before {
+    content:'→'; color:var(--sky); font-weight:700; flex-shrink:0; margin-top:0.05rem;
+  }
+
+  /* ── SKILLS ── */
+  #skills { background: rgba(255,255,255,0.02); }
+  .skills-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; }
+  .skill-card {
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.07);
+    border-radius:12px; padding:1.8rem;
+    transition: all 0.3s;
+  }
+  .skill-card:hover { background:rgba(46,134,171,0.08); border-color:rgba(46,134,171,0.3); }
+  .skill-cat {
+    font-size:0.75rem; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+    color:var(--gold); margin-bottom:1rem;
+  }
+  .skill-tags { display:flex; flex-wrap:wrap; gap:0.5rem; }
+  .skill-tag {
+    background:rgba(255,255,255,0.07); color:rgba(255,255,255,0.8);
+    padding:0.35rem 0.85rem; border-radius:6px; font-size:0.82rem; font-weight:500;
+  }
+
+  /* ── EDUCATION ── */
+  #education { background:var(--navy); }
+  .edu-timeline { display:flex; flex-direction:column; gap:0; position:relative; }
+  .edu-timeline::before {
+    content:''; position:absolute; left:1.2rem; top:0; bottom:0;
+    width:2px; background:linear-gradient(to bottom, var(--sky), transparent);
+  }
+  .edu-item { display:flex; gap:2rem; position:relative; padding-bottom:2.5rem; }
+  .edu-dot {
+    width:2.4rem; height:2.4rem; border-radius:50%;
+    background:var(--sky); flex-shrink:0; z-index:1;
+    display:flex; align-items:center; justify-content:center;
+    font-size:0.75rem; font-weight:700; color:var(--white);
+    box-shadow:0 0 0 4px rgba(46,134,171,0.2);
+  }
+  .edu-content { flex:1; }
+  .edu-degree { font-weight:700; font-size:1.05rem; margin-bottom:0.3rem; }
+  .edu-inst { color:var(--sky); font-size:0.9rem; margin-bottom:0.3rem; }
+  .edu-period { color:rgba(255,255,255,0.4); font-size:0.82rem; }
+
+  /* ── CONTACT ── */
+  #contact { background: linear-gradient(135deg, var(--blue) 0%, #0a3350 100%); }
+  .contact-inner { max-width:700px; margin:0 auto; text-align:center; }
+  .contact-inner .section-title { color:var(--white); }
+  .contact-inner .section-label { color:rgba(255,255,255,0.5); }
+  .contact-desc { color:rgba(255,255,255,0.7); font-size:1.05rem; line-height:1.7; margin-bottom:2.5rem; }
+  .contact-links { display:flex; justify-content:center; gap:1.2rem; flex-wrap:wrap; }
+  .contact-link {
+    display:flex; align-items:center; gap:0.6rem;
+    background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.15);
+    color:var(--white); text-decoration:none; padding:0.75rem 1.5rem;
+    border-radius:10px; font-size:0.9rem; font-weight:500;
+    transition:all 0.2s;
+  }
+  .contact-link:hover { background:rgba(255,255,255,0.2); transform:translateY(-2px); }
+  .contact-link .icon { font-size:1.1rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align:center; padding:2rem 4rem;
+    background:var(--navy); border-top:1px solid rgba(255,255,255,0.06);
+    color:rgba(255,255,255,0.3); font-size:0.85rem;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(24px); }
+    to { opacity:1; transform:translateY(0); }
+  }
+  .reveal {
+    opacity:0; transform:translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:768px){
+    nav { padding:1rem 1.5rem; }
+    .nav-links { gap:1.2rem; }
+    section { padding:4rem 1.5rem; }
+    #hero { padding:0 1.5rem; }
+    .about-grid { grid-template-columns:1fr; }
+    .hero-stats { gap:2rem; }
+    .exp-header { flex-direction:column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">SK.</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Open to Opportunities</div>
+    <h1 class="hero-name">Sharath Kumar<br><span>S D</span></h1>
+    <p class="hero-role">
+      Process Analyst – US Payroll &nbsp;·&nbsp; MBA Graduate &nbsp;·&nbsp; Business &amp; Finance Enthusiast<br/>
+      <span style="font-size:0.95rem;">Bengaluru, Karnataka, India</span>
+    </p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">
+        <span>Get In Touch</span>
+        <span>→</span>
+      </a>
+      <a href="https://www.linkedin.com/in/sharathkumar-sd/" target="_blank" class="btn-outline">
+        <span>LinkedIn</span>
+        <span>↗</span>
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">1+</div>
+        <div class="stat-label">Years in Payroll</div>
+      </div>
+      <div>
+        <div class="stat-num">MBA</div>
+        <div class="stat-label">Finance Graduate</div>
+      </div>
+      <div>
+        <div class="stat-num">5+</div>
+        <div class="stat-label">Core Skill Domains</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">About Me</div>
+    <h2 class="section-title">Business Mind,<br><span>Finance Heart</span></h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I'm a results-driven MBA graduate with a strong grounding in accounting, finance, and business analysis. Currently working as a Process Analyst in US Payroll operations at Broadridge Financial Solutions — one of the world's leading financial technology companies — I bring precision, compliance awareness, and process thinking to everything I do.</p>
+        <p>My BCom background gave me solid accounting foundations, while my MBA sharpened my perspective on strategic finance, budgeting, and business decision-making. I enjoy finding the story behind the numbers and using that insight to drive smarter business outcomes.</p>
+        <p>Beyond my day job, I'm a passionate entrepreneur-in-the-making — always studying business models, market trends, and growth strategies with the ambition to one day build something impactful of my own.</p>
+      </div>
+      <div class="cards-stack">
+        <div class="about-card">
+          <h4>🎯 Career Focus</h4>
+          <p>Finance & Business Analysis, Process Excellence, Payroll Operations, Strategic Planning</p>
+        </div>
+        <div class="about-card">
+          <h4>💡 What Drives Me</h4>
+          <p>Business growth analysis, financial intelligence, and the excitement of building something meaningful from scratch.</p>
+        </div>
+        <div class="about-card">
+          <h4>🌱 Currently Learning</h4>
+          <p>Advanced data analytics, AI-powered business tools, and entrepreneurship frameworks.</p>
+        </div>
+        <div class="about-card">
+          <h4>🏢 Current Employer</h4>
+          <p>Broadridge Financial Solutions — Process Analyst, US Payroll Division, Bengaluru.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-label">Work Experience</div>
+    <h2 class="section-title">Professional <span>Journey</span></h2>
+    <div class="exp-card reveal">
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">Process Analyst – US Payroll</div>
+          <div class="exp-company">Broadridge Financial Solutions · Bengaluru, India</div>
+        </div>
+        <div class="exp-period">Nov 2024 – Present</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Process and validate end-to-end US payroll transactions with 100% accuracy, ensuring full compliance with federal and state payroll regulations.</li>
+        <li>Analyse payroll discrepancies, resolve complex employee pay queries, and collaborate cross-functionally with HR and Finance teams.</li>
+        <li>Utilize payroll management systems to audit data, generate reports, and identify process improvement opportunities.</li>
+        <li>Maintain compliance documentation and assist in periodic internal and external payroll audits.</li>
+        <li>Prepare payroll analytics dashboards using Microsoft Office tools to support management reporting and decision-making.</li>
+        <li>Assist in process transition projects, contributing to SOP development and knowledge-transfer initiatives.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-label">What I Bring</div>
+    <h2 class="section-title">Skills &amp; <span>Competencies</span></h2>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-cat">Finance & Accounting</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Payroll Processing</span>
+          <span class="skill-tag">Balance Sheet</span>
+          <span class="skill-tag">Cash Budgeting</span>
+          <span class="skill-tag">Financial Analysis</span>
+          <span class="skill-tag">Taxation</span>
+          <span class="skill-tag">Accounting</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-cat">Technical Tools</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Microsoft Excel</span>
+          <span class="skill-tag">Microsoft Office</span>
+          <span class="skill-tag">PowerPoint</span>
+          <span class="skill-tag">Jupyter Notebook</span>
+          <span class="skill-tag">Ruby</span>
+          <span class="skill-tag">Data Visualization</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-cat">Business Skills</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Business Analysis</span>
+          <span class="skill-tag">Content Writing</span>
+          <span class="skill-tag">Presentation</span>
+          <span class="skill-tag">Process Documentation</span>
+          <span class="skill-tag">Market Research</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-cat">Emerging & Future</div>
+        <div class="skill-tags">
+          <span class="skill-tag">AI Prompt Engineering</span>
+          <span class="skill-tag">Business Intelligence</span>
+          <span class="skill-tag">Automation Tools</span>
+          <span class="skill-tag">Charts & Reports</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-inner">
+    <div class="section-label">Academic Background</div>
+    <h2 class="section-title">Education &amp; <span>Credentials</span></h2>
+    <div class="edu-timeline">
+      <div class="edu-item reveal">
+        <div class="edu-dot">MBA</div>
+        <div class="edu-content">
+          <div class="edu-degree">Master of Business Administration – Finance & Business Analytics</div>
+          <div class="edu-inst">Indian Academy Group of Institutions | Bangalore University</div>
+          <div class="edu-period">Feb 2023 – Oct 2024</div>
+        </div>
+      </div>
+      <div class="edu-item reveal">
+        <div class="edu-dot">BCom</div>
+        <div class="edu-content">
+          <div class="edu-degree">Bachelor of Commerce – Accounting and Taxation</div>
+          <div class="edu-inst">Bangalore University</div>
+          <div class="edu-period">Jun 2018 – Oct 2021</div>
+        </div>
+      </div>
+      <div class="edu-item reveal">
+        <div class="edu-dot">PU</div>
+        <div class="edu-content">
+          <div class="edu-degree">Pre-University Certificate (HEBA)</div>
+          <div class="edu-inst">Shree Hombegowda Pre University College</div>
+          <div class="edu-period">Jun 2016 – Jul 2018</div>
+        </div>
+      </div>
+      <div class="edu-item reveal">
+        <div class="edu-dot">10th</div>
+        <div class="edu-content">
+          <div class="edu-degree">Matriculation (SSLC)</div>
+          <div class="edu-inst">California Public School</div>
+          <div class="edu-period">Nov 2005 – Apr 2016</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="section-label">Let's Connect</div>
+    <h2 class="section-title">Get In <span style="color:var(--gold)">Touch</span></h2>
+    <p class="contact-desc">
+      Whether you're looking for a finance professional, a business analyst, or someone with an entrepreneurial mindset — I'd love to connect and explore how I can add value.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:sharathkumar453056@gmail.com" class="contact-link">
+        <span class="icon">📧</span>
+        <span>sharathkumar453056@gmail.com</span>
+      </a>
+      <a href="tel:+919108363988" class="contact-link">
+        <span class="icon">📱</span>
+        <span>+91 9108363988</span>
+      </a>
+      <a href="https://www.linkedin.com/in/sharathkumar-sd/" target="_blank" class="contact-link">
+        <span class="icon">🔗</span>
+        <span>LinkedIn Profile</span>
+      </a>
+      <a href="https://github.com/sharathkumarSBanglore" target="_blank" class="contact-link">
+        <span class="icon">💻</span>
+        <span>GitHub</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Sharath Kumar S D &nbsp;·&nbsp; Process Analyst &amp; MBA Graduate &nbsp;·&nbsp; Bengaluru, India</p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if(e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 100);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => observer.observe(r));
+
+  // Nav highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if(window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#'+current ? 'var(--gold)' : '';
+    });
+  });
+</script>
+</body>
+</html>
