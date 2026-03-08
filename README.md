@@ -116,7 +116,7 @@ I'm always open to discussing finance, business strategy, new opportunities, or 
 | 💼 LinkedIn | [linkedin.com/in/sharathkumar-sd](https://www.linkedin.com/in/sharathkumar-sd/) |
 | 📧 Email | [sharathkumar453056@gmail.com](mailto:sharathkumar453056@gmail.com) |
 | 📱 Phone | [+91 9108363988](tel:+919108363988) |
-| 🌐 Portfolio | [View My Portfolio](https://sharathkumarsbangalore.github.io/Sharath/) |
+| 🌐 Portfolio | [View My Portfolio](https://sharathkumarsbanglore.github.io/Sharath/) |
 
 </div>
 
